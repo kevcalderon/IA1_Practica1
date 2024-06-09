@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1244,1192" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="982,4791" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -37,6 +37,16 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -98,35 +108,34 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="670.4,1127.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="992,4726" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="608,1038.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="930,1041" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="PathFile">
-          <Variable.Default>
-            <Literal x:TypeArguments="x:String">C:\Users\josue\Desktop\IA-VACAS2024\ISBNS.xlsx</Literal>
-          </Variable.Default>
-        </Variable>
+        <Variable x:TypeArguments="x:String" Default="C:\Users\josue\Desktop\IA-VACAS2024\ISBNS.xlsx" Name="PathFile" />
         <Variable x:TypeArguments="ui:WorkbookApplication" Name="addISBN" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="545.6,926.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[addISBN]" WorkbookPath="[PathFile]">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="546,921" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[addISBN]" WorkbookPath="[PathFile]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="512,793.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="512,788" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="DataExcel" />
               </Sequence.Variables>
@@ -135,27 +144,27 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[DataExcel]" DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="449.6,92" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[DataExcel]" DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
                 <ui:ExcelReadRange.Range>
                   <InArgument x:TypeArguments="x:String">
                     <Literal x:TypeArguments="x:String" Value="" />
                   </InArgument>
                 </ui:ExcelReadRange.Range>
               </ui:ExcelReadRange>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataExcel]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="449.6,615.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataExcel]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="450,611" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="416,426.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="416,424" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Delay DisplayName="Retraso" Duration="00:00:15" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Añadir elemento de la cola" FolderPath="ISBNs_34" sap:VirtualizedContainerService.HintSize="353.6,217.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="cola_new">
+                      <Delay DisplayName="Retraso" Duration="00:00:15" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Añadir elemento de la cola" FolderPath="ISBNs_34" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="cola_new">
                         <ui:AddQueueItem.ItemInformation>
                           <InArgument x:TypeArguments="x:String" x:Key="ISBN">[CurrentRow("ISBN").ToString]</InArgument>
                         </ui:AddQueueItem.ItemInformation>
@@ -175,5 +184,200 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge The World's Largest Book Database - ISBN" sap:VirtualizedContainerService.HintSize="930,3597" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="062b3659-9396-4f60-8c82-6bdc85be09f6" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="896,3357" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="834,3270" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+              <ueab:ExcelProcessScopeX.Body>
+                <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="800,3158" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="738,3073" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="C:\Users\Roberto\Downloads\ISBNS.xlsx">
+                      <ueab:ExcelApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="704,2781" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="642,2696" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_2" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveAfterEachRow="False">
+                              <ueab:ExcelForEachRowX.Body>
+                                <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                                  <ActivityAction.Argument1>
+                                    <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                                  </ActivityAction.Argument1>
+                                  <ActivityAction.Argument2>
+                                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                                  </ActivityAction.Argument2>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,2483" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="sd:DataTable" Name="dataISBN" />
+                                      <Variable x:TypeArguments="sd:DataTable" Name="dataTableF" />
+                                      <Variable x:TypeArguments="x:String" Name="tittle" />
+                                      <Variable x:TypeArguments="x:String" Name="Author" />
+                                      <Variable x:TypeArguments="x:String" Name="Price" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NSetText DisplayName="Set Text 'INPUT search_query'" sap:VirtualizedContainerService.HintSize="546,194" sap2010:WorkflowViewState.IdRef="NSetText_2" ScopeIdentifier="062b3659-9396-4f60-8c82-6bdc85be09f6" Text="[CurrentRow(&quot;ISBN&quot;).ToString]" Version="V3">
+                                      <uix:NSetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://isbndb.com/" CVScreenId="79784c49-55cd-421c-83a5-92de2716c97e" CvTextArea="219, 473, 153, 15" CvTextArgument="Search ISBN or Title" CvType="Text" DesignTimeRectangle="189, 448, 989, 66" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' type='text' class='search_query form-control' placeholder='Search ISBN or Title' aaname='' /&gt;" Guid="9df18f68-3e35-436e-a619-440a067404e8" InformativeScreenshot="2ccfbbfbdeade9ee78c6dfbe83e2a869.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                      </uix:NSetText.Target>
+                                    </uix:NSetText>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON search-button'" sap:VirtualizedContainerService.HintSize="546,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="062b3659-9396-4f60-8c82-6bdc85be09f6" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://isbndb.com/" DesignTimeRectangle="1110, 461, 38, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='search-button' parentid='block-isbndbsearchblock' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-button' parentid='block-isbndbsearchblock' tag='BUTTON' type='submit' class='search-button btn btn-default' aaname='' /&gt;" Guid="f4ef365a-bb9d-42b6-b374-d5389ca73809" InformativeScreenshot="5336ab056cd97c12d98c5ef30b830a67.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <ui:BuildDataTable DataTable="[dataTableF]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="546,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ISBN&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tittle&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Author&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Result&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                                    <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'Tittle'" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="062b3659-9396-4f60-8c82-6bdc85be09f6" ScrapingMethod="TextAttribute" TextString="[tittle]" Version="V3">
+                                      <uix:NGetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9781234567897" DesignTimeRectangle="415, 215, 724, 39" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='book-title h1 mb-10 mb-md-8' /&gt;" Guid="056c15c4-03fa-4344-b395-66f8ca1fde07" InformativeScreenshot="9a300e4683aa01ff8dfc39637c477043.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="134, 107, 150, 47" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='' aaname='Home' /&gt;" Guid="81e6ad35-5bdd-4ee5-b4f8-36852137347e" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NGetText.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NGetText>
+                                    <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'Authors'" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="062b3659-9396-4f60-8c82-6bdc85be09f6" ScrapingMethod="TextAttribute" TextString="[Author]" Version="V3">
+                                      <uix:NGetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780987654328" DesignTimeRectangle="527, 404, 193, 50" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='                                                                                                                                                                                                       ' /&gt;" Guid="a1fba88d-05f1-475e-81ca-9364bf675043" InformativeScreenshot="ae9634337c3fcba27c2f1a60524c80a1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="415, 404, 112, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Authors:' check:innerText='Authors:' /&gt;" Guid="787c13c3-419d-4b73-adb9-739a2bd4bd83" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NGetText.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NGetText>
+                                    <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'List Price'" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="062b3659-9396-4f60-8c82-6bdc85be09f6" ScrapingMethod="TextAttribute" TextString="[Price]" Version="V3">
+                                      <uix:NGetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780061120084" DesignTimeRectangle="527, 404, 167, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="f6942869-0f02-44c8-ac4c-979029c3e063" InformativeScreenshot="ccc80be63caff3257c0b65caa144f543.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="415, 404, 112, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='List Price:' check:innerText='List Price:' /&gt;" Guid="7c815cf1-bcdd-4c2c-b2fb-2ecda8270cab" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NGetText.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NGetText>
+                                    <If Condition="[String.IsNullOrEmpty(tittle)]" sap:VirtualizedContainerService.HintSize="546,1298" sap2010:WorkflowViewState.IdRef="If_1">
+                                      <If.Then>
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,294" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;ISBN&quot;).ToString,&quot;&quot;, &quot;&quot;, &quot;&quot;,&quot;failed&quot;}]" DataTable="[dataTableF]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,834" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If Condition="[String.IsNullOrEmpty(Price)]" sap:VirtualizedContainerService.HintSize="450,749" sap2010:WorkflowViewState.IdRef="If_2">
+                                            <If.Then>
+                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,294" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;ISBN&quot;).ToString,tittle, Author, &quot;&quot;,&quot;success&quot;}]" DataTable="[dataTableF]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,294" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;ISBN&quot;).ToString,tittle, Author, Price,&quot;success&quot;}]" DataTable="[dataTableF]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                              </Sequence>
+                                            </If.Else>
+                                          </If>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="546,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                    <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;Sheet3&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="546,191" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dataTableF]" />
+                                    <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="546,105" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ueab:ExcelForEachRowX.Body>
+                            </ueab:ExcelForEachRowX>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelApplicationCard.Body>
+                    </ueab:ExcelApplicationCard>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelProcessScopeX.Body>
+            </ueab:ExcelProcessScopeX>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="LVs6OqpRXEWTCaVKgsAH8Q" IconBase64="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" InformativeScreenshot="b5632c098d326e1d9561c860ac5a9746.jpg" Reference="NpognxO6i0i33H5I5nDLEQ/QSK8CYERO0yWpXd5FWHJ1A" Selector="&lt;html app='msedge.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" Title="The World's Largest Book Database - ISBN Database | ISBNdb" Url="https://isbndb.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>

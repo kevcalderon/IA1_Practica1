@@ -21572,15 +21572,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\josue\\.nuget\\packages\\": {}
+    "C:\\Users\\Roberto\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "practica1",
       "projectName": "practica1",
-      "projectPath": "C:\\Users\\josue\\Desktop\\IA-VACAS2024\\practica1\\.local",
-      "packagesPath": "C:\\Users\\josue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\josue\\Desktop\\IA-VACAS2024\\practica1\\.local"
+      "projectPath": "C:\\Users\\Roberto\\Documents\\Repositorios\\IA1_Practica1\\.local",
+      "packagesPath": "C:\\Users\\Roberto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Roberto\\Documents\\Repositorios\\IA1_Practica1\\.local"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -21611,7 +21611,7 @@
             "version": "[24.4.1-preview, 24.4.1-preview]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\josue\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Roberto\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
