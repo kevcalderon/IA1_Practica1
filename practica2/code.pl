@@ -90,10 +90,16 @@ subc(C1, C2) :- subclase_de(C1, C2).
 subc(C1, C2) :- subclase_de(C1, C3),
                 subc(C3, C2).
 
+
+pertenece_a_genero(Objeto, Genero) :-
+    tiene_propiedad(Objeto, pertenece_a, Genero).
+
 % Regla para saber las propiedades de un objeto
-propiedad(Obj, Prop) :- es(Clase, Obj),
-                        tiene_propiedad(Clase, Propiedad, Clase2),
-                        Prop =.. [Propiedad, Clase2].
+propiedad(Obj, Propiedad, Valor) :- tiene_propiedad(Obj, Propiedad, Valor).
+
+% Regla para obtener todas las propiedades de un objeto
+todas_las_propiedades(Obj, PropList) :-
+    findall(Propiedad-Valor, propiedad(Obj, Propiedad, Valor), PropList).
 
 % Exportar a DOT
 export_to_dot(FileName) :-
